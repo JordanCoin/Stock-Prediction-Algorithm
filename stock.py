@@ -37,6 +37,19 @@ confidence = clf.score(X_test, y_test)
 print("confidence: ", confidence)
 
 forecast_prediction = clf.predict(X_forecast)
-print(forecast_prediction)
+# print(forecast_prediction)
+
+for forecast in forecast_prediction:
+    print("daily forecast: ", forecast)
 
 # TO-DO: Display on matplotlib
+
+# fig = plt.figure()
+plt.ylabel('Price')
+plt.xlabel('Day')
+plt.title('TSLA 30 Day Prediction Chart')
+plt.plot(y, X)
+plt.axis([0, len(forecast_prediction), 0, 500])
+# ax = fig.add_subplot(111)
+# ax.plot(y, X)
+plt.show()
